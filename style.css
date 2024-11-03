@@ -1,0 +1,84 @@
+body {
+    overflow-y: auto;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #00aaff, #0066ff);
+    color: #fff;
+    text-align: center;
+    animation: backgroundAnimation 10s infinite alternate;
+}
+
+@keyframes backgroundAnimation {
+    0% { background-color: #00aaff; }
+    100% { background-color: #0066ff; }
+}
+
+.container {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    margin: auto;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.mode-button, .back-button, .start-button {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.mode-button:hover, .back-button:hover, .start-button:hover {
+    background-color: #ff4500;
+    transform: scale(1.05);
+}
+
+#gameInfo {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+#videoContainer {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+video {
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+}
+
+.flash {
+    animation: flashAnimation 0.5s ease;
+}
+
+@keyframes flashAnimation {
+    0% { background-color: rgba(255, 255, 0, 0.5); }
+    50% { background-color: rgba(255, 255, 0, 0.8); }
+    100% { background-color: rgba(255, 255, 0, 0.5); }
+}
