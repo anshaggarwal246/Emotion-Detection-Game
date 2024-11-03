@@ -1,27 +1,37 @@
 body {
-    overflow-y: auto;
+    overflow: hidden; /* Hide overflow to prevent scrollbars */
     height: 100vh;
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #00aaff, #0066ff);
+    background: linear-gradient(135deg, #000000, #3b1f6b); /* Black to dark purple gradient */
     color: #fff;
-    text-align: center;
-    animation: backgroundAnimation 10s infinite alternate;
+    display: flex; /* Use flexbox to center the container */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: relative; /* Make body a positioned container for absolute positioning */
 }
 
-@keyframes backgroundAnimation {
-    0% { background-color: #00aaff; }
-    100% { background-color: #0066ff; }
+#emojiContainer {
+    position: absolute; /* Position the emoji container absolutely */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Allow clicks to pass through to elements in front */
+    z-index: -1; /* Send the emoji container to the back */
 }
 
 .container {
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(30, 30, 30, 0.9); /* Dark gray background for container */
     border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     max-width: 600px;
-    margin: auto;
+    width: 100%; /* Allow the container to take full width on small screens */
+    margin: 20px; /* Add margin for small screens */
     animation: fadeIn 1s;
+    position: relative; /* Ensure this is above the background emojis */
+    z-index: 1; /* Set z-index higher to stay above the emojis */
 }
 
 @keyframes fadeIn {
@@ -35,19 +45,51 @@ h1 {
 }
 
 .mode-button, .back-button, .start-button {
-    background-color: #ff6600;
+    background-color: #5f2b91; /* Purple color for buttons */
     color: #fff;
     border: none;
     padding: 15px 30px;
     font-size: 1.1em;
     border-radius: 8px;
     cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
+    position: relative;
+    overflow: hidden; /* Hide overflow for animation */
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .mode-button:hover, .back-button:hover, .start-button:hover {
-    background-color: #ff4500;
-    transform: scale(1.05);
+    transform: scale(1.05); /* Slightly increase button size */
+    box-shadow: 0 0 20px rgba(95, 43, 145, 0.5); /* Add glow effect */
+}
+
+.mode-button::before, .back-button::before, .start-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(95, 43, 145, 0.7);
+    border-radius: 50%;
+    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+    z-index: 0;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+}
+
+.mode-button:hover::before, .back-button:hover::before, .start-button:hover::before {
+    width: 350%;
+    height: 350%;
+    opacity: 1;
+}
+
+.mode-button:hover span, .back-button:hover span, .start-button:hover span {
+    color: #fff; /* Maintain text color on hover */
+}
+
+.mode-button span, .back-button span, .start-button span {
+    position: relative;
+    z-index: 1; /* Position text above the hover effect */
 }
 
 #gameInfo {
@@ -63,8 +105,8 @@ h1 {
     margin: 20px auto;
     border-radius: 12px;
     overflow: hidden;
-    border: 3px solid #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border: 3px solid #5f2b91; /* Keep border purple for contrast */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 video {
@@ -73,12 +115,20 @@ video {
     pointer-events: none;
 }
 
+/* Flash effect for successful matches */
 .flash {
-    animation: flashAnimation 0.5s ease;
+    animation: flashAnimation 0.5s;
 }
 
 @keyframes flashAnimation {
-    0% { background-color: rgba(255, 255, 0, 0.5); }
-    50% { background-color: rgba(255, 255, 0, 0.8); }
-    100% { background-color: rgba(255, 255, 0, 0.5); }
+    0% { background-color: rgba(255, 255, 255, 0); }
+    50% { background-color: rgba(255, 255, 255, 0.2); }
+    100% { background-color: rgba(255, 255, 255, 0); }
+}
+
+/* Emoji styles */
+.emoji {
+    display: inline-block;
+    font-size: 3em; /* Adjust emoji size */
+    position: absolute; /* Allow absolute positioning */
 }
