@@ -14,6 +14,7 @@
         <div id="modeSelection" class="fade-in">
             <button class="mode-button" onclick="selectMode('liveDetection')">Live Emotion Detection</button>
             <button class="mode-button" onclick="selectMode('challenge')">Emotion Detection Challenge</button>
+            <button class="mode-button" onclick="selectMode('ageGenderDetection')">Age & Gender Detection</button> <!-- New Button -->
         </div>
         
         <!-- Game Screen -->
@@ -33,6 +34,7 @@
                 <p id="targetEmotion" style="display: none;"><strong>Target Emotion:</strong> <span>N/A</span></p>
                 <p id="scoreDisplay" style="display: none;"><strong>Score:</strong> <span id="score">0</span></p>
                 <p id="timerDisplay" style="display: none;"><strong>Time Remaining:</strong> <span id="timer">30</span> seconds</p>
+                <p id="ageGenderDisplay" style="display: none;"><strong>Age:</strong> <span id="age">N/A</span>, <strong>Gender:</strong> <span id="gender">N/A</span></p> <!-- Age & Gender Display -->
             </div>
         </div>
 
