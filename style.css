@@ -6,6 +6,9 @@ body {
     background: linear-gradient(135deg, #000000, #3b1f6b); /* Black to dark purple gradient */
     color: #fff;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
@@ -14,7 +17,6 @@ body {
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     max-width: 600px;
-    margin: auto;
     animation: fadeIn 1s;
 }
 
@@ -44,36 +46,6 @@ h1 {
 .mode-button:hover, .back-button:hover, .start-button:hover {
     transform: scale(1.05); /* Slightly increase button size */
     box-shadow: 0 0 20px rgba(95, 43, 145, 0.5); /* Add glow effect */
-}
-
-.mode-button::before, .back-button::before, .start-button::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300%;
-    height: 300%;
-    background: rgba(95, 43, 145, 0.7);
-    border-radius: 50%;
-    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
-    z-index: 0;
-    opacity: 0;
-    transform: translate(-50%, -50%);
-}
-
-.mode-button:hover::before, .back-button:hover::before, .start-button:hover::before {
-    width: 350%;
-    height: 350%;
-    opacity: 1;
-}
-
-.mode-button:hover span, .back-button:hover span, .start-button:hover span {
-    color: #fff; /* Maintain text color on hover */
-}
-
-.mode-button span, .back-button span, .start-button span {
-    position: relative;
-    z-index: 1; /* Position text above the hover effect */
 }
 
 #gameInfo {
@@ -110,3 +82,14 @@ video {
     100% { background-color: rgba(255, 255, 255, 0); }
 }
 
+.credits {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    text-align: right;
+    font-size: 0.9em;
+    color: #cccccc; /* Light gray for subtlety */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
