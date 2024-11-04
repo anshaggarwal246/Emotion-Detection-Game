@@ -3,7 +3,7 @@ let gameInterval;
 let selectedMode = '';
 let timerInterval;
 
-const emotions = ['neutral', 'happy', 'sad', 'angry', 'fearful', 'disgusted', 'surprised'];
+const emotions = ['neutral', 'happy 😄', 'sad 🥲', 'angry', 'fearful', 'disgusted', 'surprised'];
 
 async function loadModels() {
     console.log("Loading models...");
