@@ -128,3 +128,13 @@ video {
         opacity: 0;
     }
 }
+
+/* Random Positioning and Delay for each Emoji */
+.emoji:nth-child(1) { left: 10%; animation-delay: 0s; }
+.emoji:nth-child(2) { left: 20%; animation-delay: 2s; }
+.emoji:nth-child(3) { left: 30%; animation-delay: 4s; }
+.emoji:nth-child(4) { left: 40%; animation-delay: 6s; }
+.emoji:nth-child(5) { left: 50%; animation-delay: 8s; }
+.emoji:nth-child(6) { left: 60%; animation-delay: 10s; }
+.emoji:nth-child(7) { left: 70%; animation-delay: 12s; }
+.emoji:nth-child(8) { left: 80%; animation-delay: 14s; }
