@@ -14,7 +14,7 @@
         <div id="modeSelection" class="fade-in">
             <button class="mode-button" onclick="selectMode('liveDetection')">Live Emotion Detection</button>
             <button class="mode-button" onclick="selectMode('challenge')">Emotion Detection Challenge</button>
-            <button class="mode-button" onclick="selectMode('ageGenderDetection')">Age & Gender Detection</button> <!-- New Button -->
+            <button class="mode-button" onclick="selectMode('ageGenderDetection')">Age & Gender Detection</button>
         </div>
         
         <!-- Game Screen -->
@@ -23,9 +23,10 @@
             <button class="back-button" onclick="goBack()">Back</button>
             <button class="start-button" onclick="startGame()">Start Game</button>
             
-            <!-- Video Container -->
-            <div id="videoContainer">
+            <!-- Video Container with Emoji Overlay -->
+            <div id="videoContainer" style="position: relative;">
                 <video id="video" autoplay muted></video>
+                <div id="emojiDisplay" class="emoji-overlay" style="position: absolute; top: 10%; left: 50%; transform: translateX(-50%); font-size: 4em; pointer-events: none;"></div>
             </div>
             
             <!-- Game Info Display -->
@@ -34,7 +35,7 @@
                 <p id="targetEmotion" style="display: none;"><strong>Target Emotion:</strong> <span>N/A</span></p>
                 <p id="scoreDisplay" style="display: none;"><strong>Score:</strong> <span id="score">0</span></p>
                 <p id="timerDisplay" style="display: none;"><strong>Time Remaining:</strong> <span id="timer">30</span> seconds</p>
-                <p id="ageGenderDisplay" style="display: none;"><strong>Age:</strong> <span id="age">N/A</span>, <strong>Gender:</strong> <span id="gender">N/A</span></p> <!-- Age & Gender Display -->
+                <p id="ageGenderDisplay" style="display: none;"><strong>Age:</strong> <span id="age">N/A</span>, <strong>Gender:</strong> <span id="gender">N/A</span></p>
             </div>
         </div>
 
